@@ -7,7 +7,7 @@
 </head>
 <body>
 <h2>飲食店情報管理メニュー</h2>
-    <form action="restaurant.php" method="post">
+    <form action="restaurant-branch.php" method="post">
         <button type="submit" name="select">一覧</button>
         <button type="submit" name="insert">登録</button>
         <button type="submit" name="update">更新</button>
