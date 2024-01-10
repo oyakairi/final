@@ -5,4 +5,4 @@ INSERT INTO category(name) VALUE
 ('ラーメン');
 
 INSERT INTO restaurant(name, category_id) VALUE
-('','');
+('一蘭','4');
