@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>music-menu(CRUD)</title>
+    <title>restaurant-menu</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
