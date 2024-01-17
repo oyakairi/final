@@ -1,3 +1,4 @@
+<?php require 'database.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,19 +7,13 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<h2>飲食店情報管理メニュー</h2>
-    <table>
-        <?php
-            $pdo=new PDO($connect, USER, PASS);
-            $sql=$pdo->query('select * from restaurant');
-            foreach($sql as $row){              
-                echo '<tr>';
-                echo '<td>', $row['id'], '</td>';
-                echo '<td>', $row['name'], '</td>';
-                echo '<td>', $row['category_id'], '</td>';
-                echo '</tr>';
-                echo "\n";
-            }
-        ?>
-    </table>
+    <form action="restaurant-insert.php" method="post">
+    <h2>飲食店情報管理メニュー</h2>
+    <p><label for="">飲食店名</label><input type="text" name="name" id=""></p>
+    <button type="submit">登録</button>
+    <?php
+        $pdo=new PDO($connect, USER, PASS);
+        $sql=$pdo->prepare('insert into restaurant value (null,?,?)');
+        $sql->execute([$_POST['name'], $_SESSION])
+    ?>
 </html>
