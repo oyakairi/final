@@ -9,9 +9,21 @@
 <body>
     <h2>飲食店情報管理メニュー</h2>
     <a href="restaurant-menu.php">ホームへ戻る</a>
-    <form action="">
-    <table>
-    <tr><th>ID</th><th>飲食店名</th><th>カテゴリID</th></tr>
+    <form action="update-update-result.php">
+        <?php
+            echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_POST['name'],'"></p>';
+            echo 'カテゴリ';
+            echo '<select name="category">';
+            $pdo=new PDO($connect, USER, PASS);
+            $sql1=$pdo->query('select * from category');
+            foreach($sql1 as $row){
+                echo '<option value="', $row['id'], '">', $row['name'],'</option>';
+            }
+            echo '</select>';
+        ?>
+        
+        <input type="submit" value="登録">
+    </form>
     <?php
         if(isset($_POST['name']) && isset($_POST['category'])){
             $sql=$pdo->prepare('update restaurant set name=?, category_id=?, where id=?');
@@ -19,6 +31,6 @@
             require 'restaurant.php';
         }
     ?>
-</table>
+    
 </body>
 </html>
