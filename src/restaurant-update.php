@@ -19,7 +19,7 @@
             echo '<tr>';
             echo '<form action="restaurant-update-result.php">';
             echo '<td>';
-		    echo '<input type="hidden" name="id" value="', $row['id'], '">';
+		    echo '<input type="text" name="id" value="', $row['id'], '" disabled>';
 		    echo '</td> ';
             echo '<td>';
 		    echo '<input type="text" name="name" value="', $row['name'], '">';
