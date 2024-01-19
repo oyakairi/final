@@ -25,7 +25,7 @@
 		    echo '<input type="text" name="name" value="', $row['name'], '">';
 		    echo '</td> ';
             echo '<td>';
-            echo '<input type="text" name="name" value="', $row['category'], '">';
+            echo '<input type="number" name="name" value="', $row['category_id'], '">';
             echo '</td> ';
             echo '<td>';
             echo '<input type="submit" value="更新">';
