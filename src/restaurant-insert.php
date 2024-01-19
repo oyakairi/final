@@ -11,7 +11,7 @@
     <h2>飲食店情報管理メニュー</h2>
     <a href="restaurant-menu.php">ホームへ戻る</a>
     <p><label for="">飲食店名</label><input type="text" name="name" id=""></p>
-    カテゴリ
+    <p>カテゴリ
     <select name="category">
     <?php
         $pdo=new PDO($connect, USER, PASS);
@@ -20,8 +20,8 @@
             echo '<option value="', $row['id'], '">', $row['name'],'</option>';
         }
     ?>
-    </select>
-    <input type="submit" value="登録">
+    </select></p>
+    <p><input type="submit" value="登録"></p>
     </form>
     <?php
         if(isset($_POST['name']) && isset($_POST['category'])){
