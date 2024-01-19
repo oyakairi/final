@@ -21,7 +21,7 @@
     ?>
     </select>
     <input type="submit">登録
-
+    </form>
     <?php
         $sql2=$pdo->prepare('insert into restaurant value (null,?,?)');
         $sql2->execute([$_POST['name'], $_POST['category']]);
