@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <?php
-        require 'resutaurant.php';
-    ?>
+    <?php require 'restaurant.php'; ?>
 </body>
 </html>
