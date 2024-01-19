@@ -23,9 +23,9 @@
                 }
                 echo '</select></p>';
                 echo '<input type="hidden" name="id" value="', $_POST['id'], '">';
+                echo '<p><input type="submit" value="更新"></p>';
             }
         ?>
-        <p><input type="submit" value="更新"></p>
     </form>
     <?php
         if(isset($_POST['name']) && isset($_POST['category'])){
