@@ -23,7 +23,7 @@
             echo '<td>', $row['category_id'], '</td>';
             echo '<td>';
             echo '<input type="hidden" name="name" value="', $row['name'], '">';
-            echo '<input type="hidden" name="name" value="', $row['name'], '">';
+            echo '<input type="hidden" name="category" value="', $row['category_id'], '">';
             echo '</td>';
             echo '</tr>';
             echo "\n";
