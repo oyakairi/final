@@ -25,12 +25,7 @@
 		    echo '<input type="text" name="name" value="', $row['name'], '">';
 		    echo '</td> ';
             echo '<td>';
-            echo '<select name="category">';
-            $sql2=$pdo->prepare('select * from category, restaurant where category_id=id');
-            foreach($sql2 as $row2){
-                echo '<option value="', $row2['id'], '">', $row2['id'],'</option>';
-            }
-            echo '</select>';
+            echo '<input type="text" name="name" value="', $row['category_id'], '">';
             echo '</td> ';
             echo '<td>';
             echo '<input type="submit" value="更新">';
