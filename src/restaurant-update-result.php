@@ -15,7 +15,9 @@
                 $pdo=new PDO($connect, USER, PASS);
                 $sql1=$pdo->prepare('select * from restaurant where id=?');
                 $sql1->execute([$_POST['id']]);
-                echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_POST['name'],'"></p>';
+                foreach($sql1 as $row){
+                    echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_row['name'],'"></p>';
+                }
                 echo 'カテゴリ';
                 echo '<select name="category">';
                 $sql2=$pdo->prepare('select * from category, restaurant where id=?');
