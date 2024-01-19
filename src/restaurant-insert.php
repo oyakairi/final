@@ -9,6 +9,7 @@
 <body>
     <form action="restaurant-insert.php" method="post">
     <h2>飲食店情報管理メニュー</h2>
+    <a href="restaurant-menu.php">ホームへ戻る</a>
     <p><label for="">飲食店名</label><input type="text" name="name" id=""></p>
     カテゴリ
     <select name="category">
@@ -24,14 +25,12 @@
     </form>
     <?php
         
-        if(isset($_POST['name'])){
-            if(isset($_POST['category'])){
-                $sql2=$pdo->prepare('insert into restaurant value (null,?,?)');
-                $sql2->execute([$_POST['name'], $_POST['category']]);
-                require 'restaurant.php';
-            }
+        if(isset($_POST['name']) && isset($_POST['category'])){
+            $sql2=$pdo->prepare('insert into restaurant value (null,?,?)');
+            $sql2->execute([$_POST['name'], $_POST['category']]);
+            require 'restaurant.php';
         }else{
-            echo '必要項目が入力されていません。';
+            echo '必要項目が入力してください。';
         }
     ?>
 </body>

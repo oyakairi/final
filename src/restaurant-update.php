@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<?php require 'restaurant.php'; ?>
+    <h2>飲食店情報管理メニュー</h2>
+    <a href="restaurant-menu.php">ホームへ戻る</a>
+    <?php require 'restaurant.php'; ?>
 </body>
 </html>
