@@ -18,7 +18,6 @@
         foreach($sql1 as $row){              
             echo '<tr>';
             echo '<form action="restaurant-update-result.php">';
-            echo '<td>', $row['id'], '</td>';
             echo '<td>';
 		    echo '<input type="hidden" name="id" value="', $row['id'], '">';
 		    echo '</td> ';
@@ -33,7 +32,9 @@
             }
             echo '</td> ';
             echo '</select>';
+            echo '<td>';
             echo '<input type="submit" value="更新">';
+            echo '</td>';
             echo '</form>';
             echo '</tr>';
             echo "\n";
