@@ -25,14 +25,14 @@
             echo '<td>';
 		    echo '<input type="text" name="name" value="', $row['name'], '">';
 		    echo '</td> ';
-            echo '<select name="category">'
+            echo '<select name="category">';
             $sql2=$pdo->query('select * from category');
             foreach($sql1 as $row){
                 echo '<option value="', $row['id'], '">', $row['id'],'</option>';
             }
             echo '</select>';
             echo '<input type="submit" value="更新">';
-            echo '</form>'
+            echo '</form>';
             echo '</tr>';
             echo "\n";
         }
