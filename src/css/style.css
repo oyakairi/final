@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 table {
-    margin: 10px auto;
+    margin: 10px;
     border-collapse: collapse;
     border: solid 2px #333;
 }
