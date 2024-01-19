@@ -26,7 +26,7 @@
 		    echo '</td> ';
             echo '<td>';
             echo '<select name="category">';
-            $sql2=$pdo->query('select * from category');
+            $sql2=$pdo->query('select * from category, restaurant where category_id=id');
             foreach($sql2 as $row){
                 echo '<option value="', $row['id'], '">', $row['id'],'</option>';
             }
