@@ -20,7 +20,7 @@
         }
     ?>
     </select>
-    <button type="submit">登録</button>
+    <input type="submit">登録
 
     <?php
         $sql2=$pdo->prepare('insert into restaurant value (null,?,?)');
