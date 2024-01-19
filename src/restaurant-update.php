@@ -11,7 +11,7 @@
     <a href="restaurant-menu.php">ホームへ戻る</a>
     <form action="">
     <table>
-    <tr><th>ID</th><th>飲食店名</th><th>カテゴリID</th></tr>
+    <tr><th></th><th>ID</th><th>飲食店名</th><th>カテゴリID</th></tr>
     <?php
         $pdo=new PDO($connect, USER, PASS);
         $sql1=$pdo->query('select * from restaurant');
@@ -19,11 +19,9 @@
             echo '<tr>';
             echo '<form action="restaurant-update-result.php">';
             echo '<td>';
-            echo '<input type="radio">';
+            echo '<input type="radio" value="', $row['id'],'">';
             echo '</td> ';
-            echo '<td>';
-		    echo '<input type="text" name="id" value="', $row['id'], '" disabled>';
-		    echo '</td> ';
+            echo '<td>', $row['id'], '</td>';
             echo '<td>';
 		    echo '<input type="text" name="name" value="', $row['name'], '">';
 		    echo '</td> ';
