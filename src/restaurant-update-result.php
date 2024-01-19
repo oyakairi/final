@@ -14,26 +14,17 @@
             if(isset($_POST['name']) && isset($_POST['category'])){
                 echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_POST['name'],'"></p>';
                 echo '<p><label for="">カテゴリ</label><input type="text" name="category" value="', $_POST['category'],'"></p>';
-                //echo '<select name="category">';
-                $pdo=new PDO($connect, USER, PASS);
-                /*$sql1=$pdo->query('select * from category');
-                foreach($sql1 as $row){
-                    if(isset($_POST['category'])){
-                        echo '<option value="', $_POST['category'], '">', $row['name'],'</option>';
-                    }else{
-                        echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
-                    }
-                }
-                echo '</select></p>';*/
                 echo '<input type="hidden" name="id" value="', $_POST['id'], '">';
                 echo '<p><input type="submit" value="更新"></p>';
             }
         ?>
     </form>
     <?php
+        require 'category.php';
+        $pdo=new PDO($connect, USER, PASS);
         if(isset($_POST['name']) && isset($_POST['category'])){
-            $sql2=$pdo->prepare('update restaurant set name=?, category_id=? where id=?');
-            $sql2->execute([$_POST['name'], $_POST['category'], $_POST['id']]);
+            $sql1=$pdo->prepare('update restaurant set name=?, category_id=? where id=?');
+            $sql1->execute([$_POST['name'], $_POST['category'], $_POST['id']]);
             require 'restaurant.php';
         }
     ?>

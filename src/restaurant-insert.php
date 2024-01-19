@@ -28,7 +28,6 @@
             $sql2=$pdo->prepare('insert into restaurant value (null,?,?)');
             $sql2->execute([$_POST['name'], $_POST['category']]);
             require 'restaurant.php';
-            require 'category.php';
         }else{
             echo '必要項目を入力してください。';
         }
