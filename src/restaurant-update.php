@@ -10,7 +10,7 @@
     <h2>飲食店情報管理メニュー</h2>
     <a href="restaurant-menu.php">ホームへ戻る</a>
     <table>
-    <tr><th></th><th>ID</th><th>飲食店名</th><th>カテゴリID</th></tr>
+    <tr><th>ID</th><th>飲食店名</th><th>カテゴリID</th><th></th></tr>
     <?php
         $pdo=new PDO($connect, USER, PASS);
         $sql1=$pdo->query('select * from restaurant');
