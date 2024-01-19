@@ -30,6 +30,7 @@
             foreach($sql2 as $row){
                 echo '<option value="', $row['id'], '">', $row['id'],'</option>';
             }
+            echo '</select>';
             echo '</td> ';
             echo '<td>';
             echo '<input type="submit" value="更新">';
