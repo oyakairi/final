@@ -27,7 +27,7 @@
 		    echo '</td> ';
             echo '<select name="category">';
             $sql2=$pdo->query('select * from category');
-            foreach($sql1 as $row){
+            foreach($sql2 as $row){
                 echo '<option value="', $row['id'], '">', $row['id'],'</option>';
             }
             echo '</select>';
