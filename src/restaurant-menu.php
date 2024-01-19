@@ -12,6 +12,7 @@
         <button type="submit" name="insert">登録</button>
         <button type="submit" name="update">更新</button>
         <button type="submit" name="delete">削除</button>
+        <button type="submit" name="category">カテゴリ</button>
     </form>
 </body>
 </html>
