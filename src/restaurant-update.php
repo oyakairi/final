@@ -18,6 +18,7 @@
         foreach($sql1 as $row){              
             echo '<tr>';
             echo '<form action="restaurant-update-result.php">';
+            echo '<input type="radio">';
             echo '<td>';
 		    echo '<input type="text" name="id" value="', $row['id'], '" disabled>';
 		    echo '</td> ';
