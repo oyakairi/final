@@ -14,18 +14,22 @@
     <tr><th>ID</th><th>飲食店名</th><th>カテゴリID</th></tr>
     <?php
         $pdo=new PDO($connect, USER, PASS);
-        $sql=$pdo->query('select * from restaurant');
+        $sql1=$pdo->query('select * from restaurant');
         foreach($sql as $row){              
             echo '<tr>';
-            echo '<form action="">'
+            echo '<form action="restaurant-update-result.php">'
             echo '<td>', $row['id'], '</td>';
             echo '<td>';
 		    echo '<input type="text" name="name" value="', $row['name'], '">';
 		    echo '</td> ';
-            echo '<td>';
-		    echo '<input type="text" name="category_id" value="', $row['category_id'], '">';
-		    echo '</td> ';
+            echo '<select name="category">'
+            $sql2=$pdo->query('select * from category');
+            foreach($sql1 as $row){
+                echo '<option value="', $row['id'], '">', $row['id'],'</option>';
+            }
+            echo '</select>';
             echo '<input type="submit" value="更新">';
+            echo '</form>'
             echo '</tr>';
             echo "\n";
         }

@@ -24,7 +24,6 @@
     <input type="submit" value="登録">
     </form>
     <?php
-        
         if(isset($_POST['name']) && isset($_POST['category'])){
             $sql2=$pdo->prepare('insert into restaurant value (null,?,?)');
             $sql2->execute([$_POST['name'], $_POST['category']]);
