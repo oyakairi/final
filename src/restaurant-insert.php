@@ -10,12 +10,13 @@
     <form action="restaurant-insert.php" method="post">
     <h2>飲食店情報管理メニュー</h2>
     <p><label for="">飲食店名</label><input type="text" name="name" id=""></p>
+    カテゴリ
     <select name="category">
     <?php
         $pdo=new PDO($connect, USER, PASS);
         $sql1=$pdo->query('select * from category');
         foreach($sql1 as $row){
-            echo '<p>カテゴリ<option value="', $row['id'], '">', $row['name'],'</option></p>';
+            echo '<option value="', $row['id'], '">', $row['name'],'</option>';
         }
     ?>
     <button type="submit">登録</button>
