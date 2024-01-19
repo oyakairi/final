@@ -9,9 +9,8 @@
 <body>
     <h2>飲食店情報管理メニュー</h2>
     <a href="restaurant-menu.php">ホームへ戻る</a>
-    <form action="">
-    <table>
     <form action="restaurant-update-result.php">
+    <table>
     <tr><th></th><th>ID</th><th>飲食店名</th><th>カテゴリID</th></tr>
     <?php
         $pdo=new PDO($connect, USER, PASS);
@@ -35,7 +34,7 @@
             echo "\n";
         }
     ?>
+    </table>
     </form>
-</table>
 </body>
 </html>
