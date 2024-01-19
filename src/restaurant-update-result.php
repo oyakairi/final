@@ -9,7 +9,7 @@
 <body>
     <h2>飲食店情報管理メニュー</h2>
     <a href="restaurant-menu.php">ホームへ戻る</a>
-    <form action="update-update-result.php" method="post">
+    <form action="update-result.php" method="post">
         <?php
             if(isset($_POST['name']) && isset($_POST['category'])){
                 echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_POST['name'],'"></p>';
