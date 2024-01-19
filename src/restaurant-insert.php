@@ -30,7 +30,7 @@
             $sql2->execute([$_POST['name'], $_POST['category']]);
             require 'restaurant.php';
         }else{
-            echo '必要項目が入力してください。';
+            echo '必要項目を入力してください。';
         }
     ?>
 </body>
