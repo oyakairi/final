@@ -11,5 +11,8 @@
     }else if(isset($_POST['delete'])){
         header('Location: restaurant-delete.php');
         exit;
+    }else if(isset($_POST['category'])){
+        header('Location: restaurant-category.php');
+        exit;
     }
 ?>

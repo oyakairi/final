@@ -1,5 +1,5 @@
 <table>
-    <tr><th>ID</th><th>飲食店名</th><th>ジャンル</th></tr>
+    <tr><th>ID</th><th>飲食店名</th><th>カテゴリ名</th></tr>
     <?php
         $pdo=new PDO($connect, USER, PASS);
         $sql=$pdo->query('select * from restaurant');
