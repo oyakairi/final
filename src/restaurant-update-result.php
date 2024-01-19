@@ -13,8 +13,8 @@
         <?php
             if(isset($_POST['name']) && isset($_POST['category'])){
                 echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_POST['name'],'"></p>';
-                echo '<p>カテゴリ';
-                echo '<select name="category">';
+                echo '<p><label for="">カテゴリ</label><input type="text" name="category" value="', $_POST['category'],'"></p>';
+                /*echo '<select name="category">';
                 $pdo=new PDO($connect, USER, PASS);
                 $sql1=$pdo->query('select * from category');
                 foreach($sql1 as $row){
@@ -24,7 +24,7 @@
                         echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
                     }
                 }
-                echo '</select></p>';
+                echo '</select></p>';*/
                 echo '<input type="hidden" name="id" value="', $_POST['id'], '">';
                 echo '<p><input type="submit" value="更新"></p>';
             }
