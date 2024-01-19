@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-        require 'resutaurant.php';
+        require 'restaurant.php';
     ?>
 </body>
 </html>
