@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+div {
+    margin: 10px auto;
+    text-align: center;
+}
+a {
+    position: fixed;
+    right: 30px;
+    top: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}
+
+form {
+    display:inline-flex;
+    margin: auto 10px;
+}
+
+table {
+    margin: 10px auto;
+    border-collapse: collapse;
+    border: solid 2px #333;
+}
+td,th {
+    border: dashed 1px #777;
+}
