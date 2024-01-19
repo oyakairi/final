@@ -16,10 +16,14 @@
                 echo '<p>カテゴリ';
                 echo '<select name="category">';
                 $pdo=new PDO($connect, USER, PASS);
-                $sql1=$pdo->prepare('select * from category where id=?');
-                $sql1->execute([$_POST['category']]);
+                $sql1=$pdo->query('select * from category');
                 foreach($sql1 as $row){
-                    echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
+                    if(isset($_POST['category'])){
+                        echo '<option value="', $_POST['category'], '">', $row['name'],'</option>';
+                    }
+                    }else{
+                        echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
+                    }
                 }
                 echo '</select></p>';
                 echo '<input type="hidden" name="id" value="', $_POST['id'], '">';
