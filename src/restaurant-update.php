@@ -11,13 +11,13 @@
     <a href="restaurant-menu.php">ホームへ戻る</a>
     <form action="">
     <table>
+    <form action="restaurant-update-result.php">
     <tr><th></th><th>ID</th><th>飲食店名</th><th>カテゴリID</th></tr>
     <?php
         $pdo=new PDO($connect, USER, PASS);
         $sql1=$pdo->query('select * from restaurant');
         foreach($sql1 as $row){              
             echo '<tr>';
-            echo '<form action="restaurant-update-result.php">';
             echo '<td>';
             echo '<input type="radio" value="', $row['id'],'">';
             echo '</td> ';
@@ -31,11 +31,11 @@
             echo '<td>';
             echo '<input type="submit" value="更新">';
             echo '</td>';
-            echo '</form>';
             echo '</tr>';
             echo "\n";
         }
     ?>
+    </form>
 </table>
 </body>
 </html>
