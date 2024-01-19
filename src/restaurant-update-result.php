@@ -20,8 +20,8 @@
                 }
                 echo '<p>カテゴリ';
                 echo '<select name="category">';
-                $sql2=$pdo->prepare('select * from category, restaurant where id=?');
-                $sql2->execute([$_['category_id']]);
+                $sql2=$pdo->prepare('select * from category, restaurant where category.id=restaurant.category_id and restaurant.id=?');
+                $sql2->execute([$_POST['id']]);
                 foreach($sql2 as $row){
                     echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
                 }
