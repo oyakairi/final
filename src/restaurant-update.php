@@ -19,13 +19,17 @@
             echo '<tr>';
             echo '<form action="restaurant-update-result.php">';
             echo '<td>';
-		    echo '<input type="text" name="id" value="', $row['id'], '" disabled>';
+		    echo '<input type="hidden" name="id" value="', $row['id'], '" disabled>';
 		    echo '</td> ';
             echo '<td>';
 		    echo '<input type="text" name="name" value="', $row['name'], '">';
 		    echo '</td> ';
             echo '<td>';
-            echo '<input type="number" name="name" value="', $row['category_id'], '">';
+            echo '<select name="category">';
+            $sql2=$pdo->prepare('select * from category, restaurant where category_id=id');
+            foreach($sql2 as $row){
+                echo '<option value="', $row['id'], '">', $row['id'],'</option>';
+            }
             echo '</td> ';
             echo '<td>';
             echo '<input type="submit" value="更新">';
