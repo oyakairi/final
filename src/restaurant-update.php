@@ -13,8 +13,8 @@
     <tr><th>ID</th><th>飲食店名</th><th>カテゴリID</th><th></th></tr>
     <?php
         $pdo=new PDO($connect, USER, PASS);
-        $sql1=$pdo->query('select * from restaurant');
-        foreach($sql1 as $row){              
+        $sql=$pdo->query('select * from restaurant');
+        foreach($sql as $row){              
             echo '<tr>';
             echo '<td>', $row['id'], '</td>';
             echo '<td>', $row['name'], '</td>';
