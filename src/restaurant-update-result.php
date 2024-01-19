@@ -16,9 +16,9 @@
             echo '<select name="category">';
             $pdo=new PDO($connect, USER, PASS);
             $sql1=$pdo->prepare('select * from category where id=?');
-            $sql1->execute([$_POST['id']]);
+            $sql1->execute([$_POST['category_id']]);
             foreach($sql1 as $row){
-                echo '<option value="', $_POST['id'], '">', $row['name'],'</option>';
+                echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
             }
             echo '</select>';
             echo '<input type="hidden" name="id" value="', $_POST['id'], '">';
