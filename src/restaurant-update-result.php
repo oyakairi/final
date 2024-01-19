@@ -18,18 +18,18 @@
                 foreach($sql1 as $row){
                     echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_row['name'],'"></p>';
                 }
-                echo 'カテゴリ';
+                echo '<p>カテゴリ';
                 echo '<select name="category">';
                 $sql2=$pdo->prepare('select * from category, restaurant where id=?');
                 $sql2->execute([$_['category_id']]);
                 foreach($sql2 as $row){
                     echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
                 }
-                echo '</select>';
+                echo '</select></p>';
                 echo '<input type="hidden" name="id" value="', $_POST['id'], '">';
             }
         ?>
-        <input type="submit" value="更新">
+        <p><input type="submit" value="更新"></p>
     </form>
     <?php
         if(isset($_POST['name']) && isset($_POST['category'])){
