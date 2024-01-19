@@ -20,7 +20,10 @@
             echo '<td>', $row['id'], '</td>';
             echo '<td>', $row['name'], '</td>';
             echo '<td>', $row['category_id'], '</td>';
-            echo '<td><input type="submit" value="削除"></td>';
+            echo '<td>';
+            echo '<input type="hidden" name="id" value="', $row['id'], '">';
+            echo '<input type="submit" value="削除">';
+            echo '</td>';
             echo '</tr>';
             echo "\n";
         }
