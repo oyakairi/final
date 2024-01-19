@@ -18,7 +18,7 @@
                 $pdo=new PDO($connect, USER, PASS);
                 $sql1=$pdo->prepare('select * from category where id=?');
                 $sql1->execute([$_POST['category']]);
-                foreach($sql2 as $row){
+                foreach($sql1 as $row){
                     echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
                 }
                 echo '</select></p>';
@@ -29,8 +29,8 @@
     </form>
     <?php
         if(isset($_POST['name']) && isset($_POST['category'])){
-            $sql3=$pdo->prepare('update restaurant set name=?, category_id=?, where id=?');
-            $sql3->execute([$_POST['name'], $_POST['category'], $_POST['id']]);
+            $sql2=$pdo->prepare('update restaurant set name=?, category_id=? where id=?');
+            $sql2->execute([$_POST['name'], $_POST['category'], $_POST['id']]);
             require 'restaurant.php';
         }
     ?>

@@ -10,8 +10,8 @@
     <h2>飲食店情報管理メニュー</h2>
     <a href="restaurant-menu.php">ホームへ戻る</a>
     <?php
-        $sql=$pdo->prepare('update restaurant set name=?, category_id=?, where id=?');
-        $sql->execute([$_POST['name'], $_POST['category']]);
+        $sql=$pdo->prepare('delete from restaurant where id=?');
+        $sql->execute([$_POST['id']]);
         require 'restaurant.php'; 
     ?>
 </body>
