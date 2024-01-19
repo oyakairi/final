@@ -11,17 +11,19 @@
     <a href="restaurant-menu.php">ホームへ戻る</a>
     <form action="update-update-result.php">
         <?php
-            echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_POST['name'],'"></p>';
-            echo 'カテゴリ';
-            echo '<select name="category">';
-            $pdo=new PDO($connect, USER, PASS);
-            $sql1=$pdo->prepare('select * from category where id=?');
-            $sql1->execute([$_POST['category_id']]);
-            foreach($sql1 as $row){
-                echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
+            if(isset($_POST['name']) && isset($_POST['category'])){
+                echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_POST['name'],'"></p>';
+                echo 'カテゴリ';
+                echo '<select name="category">';
+                $pdo=new PDO($connect, USER, PASS);
+                $sql1=$pdo->prepare('select * from category where id=?');
+                $sql1->execute([$_POST['category_id']]);
+                foreach($sql1 as $row){
+                    echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
+                }
+                echo '</select>';
+                echo '<input type="hidden" name="id" value="', $_POST['id'], '">';
             }
-            echo '</select>';
-            echo '<input type="hidden" name="id" value="', $_POST['id'], '">';
         ?>
         <input type="submit" value="更新">
     </form>
