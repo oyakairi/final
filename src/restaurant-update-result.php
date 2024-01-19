@@ -21,17 +21,16 @@
                 echo '<option value="', $row['id'], '">', $row['name'],'</option>';
             }
             echo '</select>';
+            echo '<input type="hidden" name="id" value="', $_POST['id'], '">';
         ?>
-        
-        <input type="submit" value="登録">
+        <input type="submit" value="更新">
     </form>
     <?php
         if(isset($_POST['name']) && isset($_POST['category'])){
             $sql2=$pdo->prepare('update restaurant set name=?, category_id=?, where id=?');
-            $sql2->execute([$_POST['name'], $_POST['category']]);
+            $sql2->execute([$_POST['name'], $_POST['category'], $_POST['id']]);
             require 'restaurant.php';
         }
     ?>
-    
 </body>
 </html>
