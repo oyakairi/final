@@ -12,16 +12,12 @@
     <form action="update-update-result.php" method="post">
         <?php
             if(isset($_POST['name']) && isset($_POST['category'])){
-                $pdo=new PDO($connect, USER, PASS);
-                $sql1=$pdo->prepare('select * from restaurant where id=?');
-                $sql1->execute([$_POST['id']]);
-                foreach($sql1 as $row){
-                    echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_row['name'],'"></p>';
-                }
+                echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_POST['name'],'"></p>';
                 echo '<p>カテゴリ';
                 echo '<select name="category">';
-                $sql2=$pdo->prepare('select * from category, restaurant where category.id=restaurant.category_id and restaurant.id=?');
-                $sql2->execute([$_POST['id']]);
+                $pdo=new PDO($connect, USER, PASS);
+                $sql1=$pdo->prepare('select * from category where id=?');
+                $sql1->execute([$_POST['category']]);
                 foreach($sql2 as $row){
                     echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
                 }

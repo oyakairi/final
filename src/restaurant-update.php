@@ -22,6 +22,8 @@
             echo '<td>', $row['name'], '</td>';
             echo '<td>', $row['category_id'], '</td>';
             echo '<td>';
+            echo '<input type="hidden" name="name" value="', $row['name'], '">';
+            echo '<input type="hidden" name="name" value="', $row['name'], '">';
             echo '</td>';
             echo '</tr>';
             echo "\n";
