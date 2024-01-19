@@ -15,7 +15,7 @@
     <?php
         $pdo=new PDO($connect, USER, PASS);
         $sql1=$pdo->query('select * from restaurant');
-        foreach($sql as $row){              
+        foreach($sql1 as $row){              
             echo '<tr>';
             echo '<form action="restaurant-update-result.php">';
             echo '<td>', $row['id'], '</td>';
@@ -25,11 +25,13 @@
             echo '<td>';
 		    echo '<input type="text" name="name" value="', $row['name'], '">';
 		    echo '</td> ';
+            echo '<td>';
             echo '<select name="category">';
             $sql2=$pdo->query('select * from category');
             foreach($sql2 as $row){
                 echo '<option value="', $row['id'], '">', $row['id'],'</option>';
             }
+            echo '</td> ';
             echo '</select>';
             echo '<input type="submit" value="更新">';
             echo '</form>';
