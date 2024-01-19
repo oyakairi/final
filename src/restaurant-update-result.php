@@ -20,7 +20,6 @@
                 foreach($sql1 as $row){
                     if(isset($_POST['category'])){
                         echo '<option value="', $_POST['category'], '">', $row['name'],'</option>';
-                    }
                     }else{
                         echo '<option value="', $_row['id'], '">', $row['name'],'</option>';
                     }
