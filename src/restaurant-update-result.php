@@ -17,8 +17,6 @@
             $sql=$pdo->prepare('update restaurant set name=?, category_id=?, where id=?');
             $sql->execute([$_POST['name'], $_POST['category']]);
             require 'restaurant.php';
-        }else{
-            echo '必要項目を入力してください。';
         }
     ?>
 </table>
