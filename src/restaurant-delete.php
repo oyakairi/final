@@ -20,12 +20,12 @@
             echo '<td>', $row['id'], '</td>';
             echo '<td>', $row['name'], '</td>';
             echo '<td>', $row['category_id'], '</td>';
+            echo '<td><input type="submit" value="削除"></td>';
             echo '</tr>';
             echo "\n";
         }
     ?>
 </table>
-<input type="submit" value="削除">
 </form>
 </body>
 </html>

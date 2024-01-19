@@ -9,6 +9,9 @@
 <body>
     <h2>飲食店情報管理メニュー</h2>
     <a href="restaurant-menu.php">ホームへ戻る</a>
-    <?php require 'restaurant.php'; ?>
+    <?php
+        
+        require 'restaurant.php'; 
+    ?>
 </body>
 </html>
