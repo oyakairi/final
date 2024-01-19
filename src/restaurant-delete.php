@@ -9,7 +9,7 @@
 <body>
     <h2>飲食店情報管理メニュー</h2>
     <a href="restaurant-menu.php">ホームへ戻る</a>
-    <form action="restaurant-delete-result.php">
+    <form action="restaurant-delete-result.php" method="post">
     <table>
     <tr><th>ID</th><th>飲食店名</th><th>カテゴリID</th></tr>
     <?php

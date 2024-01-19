@@ -9,6 +9,7 @@
 <body>
     <h2>飲食店情報管理メニュー</h2>
     <a href="restaurant-menu.php">ホームへ戻る</a>
+    <form action="restaurant-update-result.php" method="post">;
     <table>
     <tr><th></th><th>ID</th><th>飲食店名</th><th>カテゴリID</th><th></th></tr>
     <?php
@@ -21,7 +22,6 @@
             echo '<td>', $row['name'], '</td>';
             echo '<td>', $row['category_id'], '</td>';
             echo '<td>';
-            echo '<form action="restaurant-update-result.php">';
             echo '</td>';
             echo '</tr>';
             echo "\n";
