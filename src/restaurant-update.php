@@ -17,8 +17,11 @@
         $sql1=$pdo->query('select * from restaurant');
         foreach($sql as $row){              
             echo '<tr>';
-            echo '<form action="restaurant-update-result.php">'
+            echo '<form action="restaurant-update-result.php">';
             echo '<td>', $row['id'], '</td>';
+            echo '<td>';
+		    echo '<input type="hidden" name="id" value="', $row['id'], '">';
+		    echo '</td> ';
             echo '<td>';
 		    echo '<input type="text" name="name" value="', $row['name'], '">';
 		    echo '</td> ';
