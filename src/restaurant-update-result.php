@@ -14,9 +14,9 @@
             if(isset($_POST['name']) && isset($_POST['category'])){
                 echo '<p><label for="">飲食店名</label><input type="text" name="name" value="', $_POST['name'],'"></p>';
                 echo '<p><label for="">カテゴリ</label><input type="text" name="category" value="', $_POST['category'],'"></p>';
-                /*echo '<select name="category">';
+                //echo '<select name="category">';
                 $pdo=new PDO($connect, USER, PASS);
-                $sql1=$pdo->query('select * from category');
+                /*$sql1=$pdo->query('select * from category');
                 foreach($sql1 as $row){
                     if(isset($_POST['category'])){
                         echo '<option value="', $_POST['category'], '">', $row['name'],'</option>';
