@@ -19,8 +19,9 @@
             echo '<option value="', $row['id'], '">', $row['name'],'</option>';
         }
     ?>
+    </select>
     <button type="submit">登録</button>
-    
+
     <?php
         $sql2=$pdo->prepare('insert into restaurant value (null,?,?)');
         $sql2->execute([$_POST['name'], $_POST['category']]);
